@@ -45,10 +45,9 @@
                         </form>
                     </div> -->
                     <div class="os_lists">
-                        <table id="table_os" class="table table-striped table-sm">
+                        <table id="table_os" class="table table-striped table-bordered" style="width: 100%">
                             <thead>
                                 <tr>
-                                    <th scope="col">ID</th>
                                     <th scope="col">Solicitante</th>
                                     <th scope="col">Departamento</th>
                                     <th scope="col">Data</th>
@@ -60,7 +59,6 @@
                             <tbody>
                                 @foreach($services as $order)
                                 <tr>
-                                    <td class="align-middle" scope="row">{{$order->id}}</td>
                                     <td class="align-middle">{{ $order->requester }}</td>
                                     <td class="align-middle">{{ $order->department }}</td>
                                     <td class="align-middle">{{ $order->created_at->format('d/m/Y H:i') }}</td>
