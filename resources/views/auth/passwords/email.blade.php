@@ -32,10 +32,13 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 col-sm-6">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
+                                    {{ __('Password Reset') }}
                                 </button>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <a href="{{ route('home') }}" class="btn btn-primary">Voltar</a>
                             </div>
                         </div>
                     </form>
