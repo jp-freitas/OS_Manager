@@ -1,9 +1,33 @@
 .card-user {
-  border: 0px;
+  border: 0;
+  background: linear-gradient(180deg, #0066cc 50%, #ffffff 50%);
+  padding: 14px;
 }
 
-.card-user .user {   
-  background-color: aqua;
-  padding: 10px;
+.card-user .navigation {
+  padding-top: 15px;
 }
 
+.card-user .user i{
+  color: #ffffff;
+}
+
+.card-actions {
+  border: 0;
+}
+
+.card-list {
+  border: 0;
+}
+
+.fa-plus-square {
+  color: #0066cc;  
+}
+
+.fa-list-ul {
+  color: #0066cc;
+}
+
+.fa-user-plus {
+  color: #0066cc;
+}
