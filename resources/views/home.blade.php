@@ -3,13 +3,13 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-3 text-center card-user">
-            <div class="card">
-                <div class="align-items-center">
-                    <i class="fas fa-user-tie fa-5x" style="background-color: red;"></i>
-                    <h3>{{ Auth::user()->name }}</h3>
+        <div class="col-md-3 text-center">
+            <div class="card card-user">
+                <div class="user">
+                    <i class="fas fa-user-tie fa-5x"></i>
                 </div>
-                <div>
+                <div class="navigation">
+                    <h5>{{ Auth::user()->name }}</h5>
                     @guest
                     @else
                     {{ ' '.__('roles.'.Auth::user()->roles->first()->name) . ' | ' }}
@@ -24,8 +24,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-9 card-actions">
-            <div class="card">
+        <div class="col-md-9">
+            <div class="card card-actions">
                 <div class="card-header">
                     Gerenciamento do Sistema
                 </div>
@@ -41,8 +41,8 @@
     </div>
     <br>
     <div class="row justify-content-center">
-        <div class="col-md-12 card-list">
-            <div class="card">
+        <div class="col-md-12">
+            <div class="card card-list">
                 <div class="card-header">
                     Lista de OS
                 </div>
