@@ -6,7 +6,7 @@
         <div class="col-md-3 text-center">
             <div class="card card-user">
                 <div class="user">
-                    <i class="fas fa-user-tie fa-5x"></i>
+                    <i class="fas fa-user fa-3x"></i>
                 </div>
                 <div class="navigation">
                     <h5>{{ Auth::user()->name }}</h5>
@@ -27,13 +27,13 @@
         <div class="col-md-9">
             <div class="card card-actions">
                 <div class="card-header">
-                    Gerenciamento do Sistema
+                    <h5>Gerenciamento do Sistema</h5>
                 </div>
                 <div class="card-body">
-                    <a href="{{ route('create') }}" title="Abrir OS"><i class="far fa-plus-square fa-2x"></i></a>
-                    <a href="{{ route('regist') }}" title="Registrar OS" class="col-2"><i class="fas fa-list-ul fa-2x"></i></a>
+                    <a href="{{ route('create') }}" title="Abrir OS"><i class="fas fa-plus-square fa-3x"></i></a>
+                    <a href="{{ route('regist') }}" title="Registrar OS" class="col-2"><i class="fas fa-list-ul fa-3x"></i></a>
                     @if(Auth::user()->roles->first()->name === 'Admin')
-                    <a href="{{ route('register') }}" title="Novo Usuário"><i class="fas fa-user-plus fa-2x"></i></a>
+                    <a href="{{ route('register') }}" title="Novo Usuário"><i class="fas fa-user-plus fa-3x"></i></a>
                     @endif
                 </div>
             </div>
@@ -44,7 +44,7 @@
         <div class="col-md-12">
             <div class="card card-list">
                 <div class="card-header">
-                    Lista de OS
+                    <h5>Lista de OS</h5>
                 </div>
                 <div class="card-body table-responsive align-middle">
                     <div class="os_lists">
