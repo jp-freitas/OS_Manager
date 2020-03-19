@@ -1,14 +1,35 @@
 .card-user {
   border: 0;
-  background: linear-gradient(180deg, #0066cc 50%, #ffffff 50%);
-  padding: 14px;
+  background: linear-gradient(45deg, #0066cc 10%, #ffffff 10%);
+  padding: 13px;
+}
+
+.card-user .user {
+  color: #000000;
+}
+
+.card-user .user i{
+  color: #0066cc;
 }
 
 .card-user .navigation {
   padding-top: 15px;
+  color: #000000;
 }
 
-.card-user .user i{
+.card-user .navigation a {
+  border: solid 1px #ffffff;
+  border-radius: 10%;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 1px;
+}
+
+.card-user .navigation a:hover {
+  text-decoration: none;
+  background-color: #000000;
+  border: 1px solid #000000;
+  border-radius: 10%;
   color: #ffffff;
 }
 
@@ -30,4 +51,10 @@
 
 .fa-user-plus {
   color: #0066cc;
+}
+
+@media (max-width: 30em) {
+  .card-actions {
+    margin-top: 24px;
+  }
 }
