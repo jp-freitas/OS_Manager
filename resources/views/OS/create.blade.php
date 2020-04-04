@@ -19,7 +19,7 @@
                             <label for="department">Departamento</label>
                             <input class="form-control" type="text" name="department" id="department">
                         </div>
-                        <div class="form-group col-md-2">
+                        <div class="form-group col-md-4">
                             <label for="contact">Contato</label>
                             <input class="form-control" type="text" name="contact" id="contact">
                         </div>
