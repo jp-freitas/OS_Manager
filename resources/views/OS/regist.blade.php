@@ -4,10 +4,9 @@
 <div class="container">
     <div class="justify-content-center col-md-12">
         <div class="card">
-            <div class="card-header">
-                Registrar Ordem de Serviço
-            </div>
             <div class="card-body">
+                <h5>Registrar uma OS antiga</h5>
+                <br>
                 <form method="post" action="{{ route('registering') }}">
                     {!! csrf_field() !!}
                     <div class="form-row">
@@ -61,10 +60,10 @@
                         </div>
                     </div>
                     <div class="form-group row mb-0">
-                        <div class="offset-md-4 col-md-4 mb-1">
+                        <div class="offset-md-8 col-md-2 mb-1">
                             <button class="form-control btn btn-primary" type="submit">Registrar OS</button>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-2">
                             <a href="{{route('home')}}" class="form-control btn btn-primary">Voltar</a>
                         </div>
                     </div>

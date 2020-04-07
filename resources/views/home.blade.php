@@ -44,9 +44,9 @@
                 <div class="card-body table-responsive align-middle">
                     <h5>Lista de OS</h5>
                     <br>
-                    <div class="os_lists">
-                        <table id="table_os" class="table table-striped table-bordered" style="width: 100%">
-                            <thead>
+                    <div class="os_lists table-responsive">
+                        <table id="table_os" class="table table-sm table-striped" style="width: 100%">
+                            <thead class="thead-light">
                                 <tr>
                                     <th scope="col">Solicitante</th>
                                     <th scope="col">Departamento</th>
