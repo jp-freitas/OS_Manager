@@ -16,16 +16,21 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="department">Departamento</label>
-                            <input class="form-control" type="text" name="department" id="department">
+                            <select name="department" id="department" class="form-control">
+                                <option value="" selected disabled>Selecione</option>
+                                @foreach($departments as $department)
+                                    <option value="{{ $department }}">{{ $department }}</option>
+                                @endforeach
+                            </select>
                         </div>
-                        <div class="form-group col-md-2">
+                        <div class="form-group col">
                             <label for="contact">Contato</label>
                             <input class="form-control" type="text" name="contact" id="contact">
                         </div>
-                        <div class="form-group col-md-2">
+                        {{-- <div class="form-group col-md-2">
                             <label for="date">Data</label>
                             <input class="form-control" type="date" name="date" id="date">
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">

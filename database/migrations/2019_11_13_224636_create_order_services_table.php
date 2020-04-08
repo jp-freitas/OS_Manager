@@ -18,7 +18,7 @@ class CreateOrderServicesTable extends Migration
             $table->bigIncrements('id');
             $table->string('requester');
             $table->string('department');
-            $table->dateTime('date')->useCurrent();
+            $table->dateTime('date')->nullable();
             $table->string('contact');
             $table->mediumText('reason');
             $table->mediumText('soluction')->nullable();

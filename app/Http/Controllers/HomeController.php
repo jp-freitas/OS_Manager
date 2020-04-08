@@ -22,7 +22,8 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @param  Request  $request
+     * @return view
      */
     public function index(Request $request)
     {
@@ -32,31 +33,52 @@ class HomeController extends Controller
         // $search = $request->input('search');
         // $services = OrderService::search($search)
         //     ->paginate(5);
-        $services = OrderService::all();
+        $services = OrderService::orderBy('id', 'desc')->get();
         return view('home', compact('services'));
     }
 
     public function create()
     {
-        return view('OS/create');
+        $departments = (object) config('departments');
+
+        return view('OS/create', compact('departments'));
     }
 
     public function store(Request $request)
     {
-        $services = new OrderService();
-        $services->create($request->all());
-        return redirect()->to('home');
+        // $validatedData = $request->validate([
+        //     'requester' => 'required',
+        //     'department' => 'required',
+        //     'date' => 'nullable',
+        //     'contact' => 'required',
+        //     'reason' => 'required',
+        //     'soluction' => 'required',
+        //     'technician' => 'required|string|max:255',
+        //     'date_resolution' => 'required|date',
+        //     'status_service' => 'required'
+        // ]);
+
+        OrderService::create($request->all());
+
+        return redirect()
+            ->route('home');
     }
 
+    /**
+     * Retrive from config all departments and return a form.
+     * 
+     * @return view
+     */
     public function regist()
     {
-        return view('OS/regist');
+        $departments = (object) config('departments');
+
+        return view('OS/regist', compact('departments'));
     }
 
     public function registering(Request $request)
     {
-        $services = new OrderService();
-        $services->create($request->all());
+        OrderService::create($request->all());
         return redirect()->to('home');
     }
 

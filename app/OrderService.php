@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class OrderService extends Model
@@ -30,6 +31,11 @@ class OrderService extends Model
         'date',
         'date_resolution'
     ];
+
+    public function setDateAttribute($value)
+    {
+        $this->attributes['date'] = Carbon::parse($value)->format('Y-m-d H:i:s');
+    }
 
     public function getStatusServiceAttribute($value)
     {

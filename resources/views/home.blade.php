@@ -45,24 +45,41 @@
                     <h5>Lista de OS</h5>
                     <br>
                     <div class="os_lists table-responsive">
-                        <table id="table_os" class="table table-sm table-striped" style="width: 100%">
+                        <table id="table_os" class="table table-sm table-striped table-bordered" style="width: 100%">
                             <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">Solicitante</th>
-                                    <th scope="col">Departamento</th>
-                                    <th scope="col">Data</th>
-                                    <th scope="col">Motivo</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Ações</th>
+                                    <th scope="col">#</th>
+                                    <th>Solicitante</th>
+                                    <th>Departamento</th>
+                                    <th>Data</th>
+                                    <th>Motivo</th>
+                                    <th>Tipo</th>
+                                    <th>Status</th>
+                                    <th width="160">Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($services as $order)
                                 <tr>
+                                    <td class="align-middle">{{ $order->id }}</td>
                                     <td class="align-middle">{{ $order->requester }}</td>
                                     <td class="align-middle">{{ $order->department }}</td>
-                                    <td class="align-middle">{{ $order->created_at->format('d/m/Y H:i') }}</td>
+                                    <td class="align-middle">
+                                        @if($order->date == null)
+                                        {{ $order->created_at->format('d/m/Y H:i') }}
+                                        @else
+                                        {{ $order->date->format('d/m/Y H:i') }}
+                                        @endif
+                                    </td>
                                     <td class="align-middle">{{ $order->reason }}</td>
+                                    <td>
+                                        @if($order->date == null)
+                                            <span class="badge badge-info">OS atual</span>
+                                        @else
+                                            <span class="badge badge-secondary">OS antiga</span>
+                                        @endif
+
+                                    </td>
                                     <td class="align-middle">{{ $order->status_service }}</td>
                                     <td class="align-middle">
                                         @if((Auth::user()->roles->first()->name === 'Admin') xor (Auth::user()->roles->first()->name ==='Techinician'))

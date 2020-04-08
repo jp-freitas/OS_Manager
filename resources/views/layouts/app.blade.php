@@ -21,7 +21,9 @@
     <script src="https://kit.fontawesome.com/397a333b71.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"> --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/confirm.css') }}">
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
@@ -37,6 +39,7 @@
     <!-- <script src="{{ asset('js/confirm.js') }}"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
     <script src="{{ asset('js/newFunction.js') }}"></script>
     <script src="{{ asset('js/delete.js') }}"></script>
 </body>
