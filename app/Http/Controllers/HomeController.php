@@ -57,9 +57,7 @@ class HomeController extends Controller
         //     'date_resolution' => 'required|date',
         //     'status_service' => 'required'
         // ]);
-
         OrderService::create($request->all());
-
         return redirect()
             ->route('home');
     }
