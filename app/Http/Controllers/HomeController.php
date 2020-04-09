@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\OrderService;
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
 
 class HomeController extends Controller
 {
@@ -27,12 +25,6 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        // $permission = Permission::FindById(3);
-        // $role = Role::FindById(4);
-        // // $role -> givePermissionTo($permission);
-        // $search = $request->input('search');
-        // $services = OrderService::search($search)
-        //     ->paginate(5);
         $services = OrderService::orderBy('id', 'desc')->get();
         return view('home', compact('services'));
     }
@@ -46,17 +38,6 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
-        // $validatedData = $request->validate([
-        //     'requester' => 'required',
-        //     'department' => 'required',
-        //     'date' => 'nullable',
-        //     'contact' => 'required',
-        //     'reason' => 'required',
-        //     'soluction' => 'required',
-        //     'technician' => 'required|string|max:255',
-        //     'date_resolution' => 'required|date',
-        //     'status_service' => 'required'
-        // ]);
         OrderService::create($request->all());
         return redirect()
             ->route('home');
