@@ -48,7 +48,7 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="date_resolution">Data da Solução</label>
-                            <input class="form-control" type="date" name="date_resolution" id="date_resolution" value="{{ old('date_resolution', $services->date_resolution) }}">
+                            <input class="form-control" type="datetime-local" name="date_resolution" id="date_resolution" value="{{ old('date_resolution', $services->date_resolution) }}">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="status_service">Status</label>
