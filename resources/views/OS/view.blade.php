@@ -26,7 +26,7 @@
                             </tr>
                             <tr>
                                 <th>Data</th>
-                                <td>{{$services->created_at->format('d/m/Y H:i')}}</td>
+                                <td>{{$services->date->format('d/m/Y H:i')}}</td>
                             </tr>
                             <tr>
                                 <th>Contato</th>
@@ -46,7 +46,7 @@
                             </tr>
                             <tr>
                                 <th>Data</th>
-                                <td>{{$services->updated_at->format('d/m/Y H:i')}}</td>
+                                <td>{{$services->date_resolution->format('d/m/Y H:i')}}</td>
                             </tr>
                             <tr>
                                 <th>Status</th>
