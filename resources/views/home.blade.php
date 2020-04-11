@@ -53,7 +53,6 @@
                                     <th>Departamento</th>
                                     <th>Data</th>
                                     <th>Motivo</th>
-                                    <th>Tipo</th>
                                     <th>Status</th>
                                     <th width="160">Ações</th>
                                 </tr>
@@ -65,21 +64,13 @@
                                     <td class="align-middle">{{ $order->requester }}</td>
                                     <td class="align-middle">{{ $order->department }}</td>
                                     <td class="align-middle">
-                                        @if($order->date == null)
+                                        @if($order->date === null)
                                         {{ $order->created_at->format('d/m/Y H:i') }}
                                         @else
                                         {{ $order->date->format('d/m/Y H:i') }}
                                         @endif
                                     </td>
                                     <td class="align-middle">{{ $order->reason }}</td>
-                                    <td>
-                                        @if($order->date == null)
-                                            <span class="badge badge-info">OS atual</span>
-                                        @else
-                                            <span class="badge badge-secondary">OS antiga</span>
-                                        @endif
-
-                                    </td>
                                     <td class="align-middle">{{ $order->status_service }}</td>
                                     <td class="align-middle">
                                         @if((Auth::user()->roles->first()->name === 'Admin') xor (Auth::user()->roles->first()->name ==='Techinician'))
