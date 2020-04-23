@@ -1,44 +1,49 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-3 text-center col-sm-12">
-            <div class="card card-user shadow-sm">
-                <div class="user">
-                    <i class="fas fa-user fa-3x"></i>
-                </div>
-                <div class="navigation">
-                    <h5>{{ Auth::user()->name }}</h5>
-                    @guest
-                    @else
+<div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <div class="user">
+                <i class="fas fa-user fa-3x"></i>
+            </div>
+            <div class="navigation">
+                <h5>{{ Auth::user()->name }}</h5>
+                @guest
+                @else
+                <p>
                     {{ ' '.__('roles.'.Auth::user()->roles->first()->name) . ' ' }}
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         {{ __('Sair') }}
                     </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                    @endguest
-                </div>
+                </p>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+                @endguest
             </div>
         </div>
-        <div class="col-md-9 col-sm-12">
-            <div class="card card-actions shadow-sm">
-                <div class="card-body">
-                    <h5>Gerenciamento do Sistema</h5>
-                    <br>
-                    <a href="{{ route('create') }}" title="Abrir OS"><i class="fas fa-plus-square fa-3x"></i></a>
-                    <a href="{{ route('regist') }}" title="Registrar OS" class="col-2"><i class="fas fa-list-ul fa-3x"></i></a>
-                    @if(Auth::user()->roles->first()->name === 'Admin')
-                    <a href="{{ route('register') }}" title="Novo Usuário"><i class="fas fa-user-plus fa-3x"></i></a>
-                    @endif
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="row justify-content-center">
+        <ul class="list-unstyled components">
+            <p>Gerenciamento de Ordens de Serviço</p>
+            <li>
+                <a href="{{ route('create') }}" title="Abrir OS">Abrir OS</a>
+            </li>
+            <li>
+                <a href="{{ route('regist') }}" title="Registrar OS">Registrar OS</a>
+            </li>
+            <li>
+                @if(Auth::user()->roles->first()->name === 'Admin')
+                <a href="{{ route('register') }}" title="Novo Usuário">Novo Usuário</a>
+                @endif
+            </li>
+        </ul>
+    </nav>
+    <!-- Sidebar -->
+
+    <!-- Content -->
+    <div class="content">
         <div class="col-md-12">
             <div class="card card-list shadow-sm">
                 <div class="card-body table-responsive align-middle">
@@ -92,5 +97,6 @@
             </div>
         </div>
     </div>
+    <!-- Content -->
 </div>
 @endsection

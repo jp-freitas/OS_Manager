@@ -1,4 +1,8 @@
-$(document).ready( function () {
+$(document).ready(function () {
+
+  $('#sidebarCollapse').on('click', function () {
+    $('#sidebar').toggleClass('active');
+  });
 
   const ptBr = {
     "sEmptyTable": "Nenhum registro encontrado",
@@ -24,9 +28,9 @@ $(document).ready( function () {
     },
     "select": {
       "rows": {
-          "_": "Selecionado %d linhas",
-          "0": "Nenhuma linha selecionada",
-          "1": "Selecionado 1 linha"
+        "_": "Selecionado %d linhas",
+        "0": "Nenhuma linha selecionada",
+        "1": "Selecionado 1 linha"
       }
     }
   }
