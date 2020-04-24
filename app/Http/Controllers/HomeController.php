@@ -66,7 +66,7 @@ class HomeController extends Controller
     public function registering(Request $request)
     {
         OrderService::create($request->all());
-
+        
         return redirect()->to('home');
     }
 
