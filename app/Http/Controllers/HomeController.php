@@ -74,9 +74,7 @@ class HomeController extends Controller
     public function form($id)
     {
         $services = OrderService::find($id);
-
-        dd($services);
-
+        
         return view('/OS/form', compact('services'));
     }
 
