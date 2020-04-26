@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\OrderService;
+use App\Http\Requests\OrderService\Store as StoreRequest;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -63,9 +64,9 @@ class HomeController extends Controller
         return view('OS/regist', compact('departments'));
     }
 
-    public function registering(Request $request)
+    public function registering(StoreRequest $request)
     {
-        OrderService::create($request->all());
+        OrderService::create($request->validated());
         
         return redirect()->to('home');
     }
@@ -73,6 +74,8 @@ class HomeController extends Controller
     public function form($id)
     {
         $services = OrderService::find($id);
+
+        dd($services);
 
         return view('/OS/form', compact('services'));
     }

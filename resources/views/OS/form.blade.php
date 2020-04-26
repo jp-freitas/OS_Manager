@@ -13,26 +13,25 @@
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="requester">Solicitante</label>
-                            <input class="form-control" type="text" name="requester" id="requester" value="{{ old('requester', $services->requester) }}">
+                            <input class="form-control" type="text" name="requester" id="requester" value="{{ $services->requester }}" disabled>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-3">
                             <label for="department">Departamento</label>
-                            <input class="form-control" type="text" name="department" id="department" value="{{ old('department', $services->department
-                                ) }}">
+                            <input class="form-control" type="text" name="department" id="department" value="{{ $services->department }}" disabled>
                         </div>
-                        <div class="form-group col-md-2">
+                        <div class="form-group col-md-3">
                             <label for="date">Data</label>
-                            <input class="form-control" type="date" name="date" id="date" value="{{ old('created_at', date('Y-m-d')) }}" disabled>
+                            <input class="form-control" type="datetime-local" name="date" id="date" value="{{ $services->date }}" disabled>
                         </div>
                         <div class="form-group col-md-2">
                             <label for="contact">Contato</label>
-                            <input class="form-control" type="text" name="contact" id="contact" value="{{ old('contact', $services->contact) }}">
+                            <input class="form-control" type="text" name="contact" id="contact" value="{{ $services->contact }}" disabled>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="reason">Motivo do Chamado</label>
-                            <input class="form-control" type="text" name="reason" id="reason" value="{{ old('reason', $services->reason) }}">
+                            <input class="form-control" type="text" name="reason" id="reason" value="{{ $services->reason }}" disabled>
                         </div>
                     </div>
                     <div class="form-row">

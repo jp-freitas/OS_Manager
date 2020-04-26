@@ -18,7 +18,7 @@ class CreateOrderServicesTable extends Migration
             $table->bigIncrements('id');
             $table->string('requester');
             $table->string('department');
-            $table->dateTime('date')->nullable($value = true);
+            $table->dateTime('date')->nullable();
             $table->string('contact');
             $table->mediumText('reason');
             $table->mediumText('soluction')->nullable();
@@ -26,6 +26,7 @@ class CreateOrderServicesTable extends Migration
             $table->dateTime('date_resolution')->useCurrent()->nullable();
             $table->enum('status_service', array_keys(OrderService::STATUS_SERVICE))->default(1);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
